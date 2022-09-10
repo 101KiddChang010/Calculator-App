@@ -40,7 +40,7 @@
 <h3 align="center">Calculator App</h3>
 
   <p align="center">
-    This web app simulates a real simple operational calculator
+    This web app simulates a simple operational calculator that can switch between light mode and dark mode.
     <br />
     <a href="https://github.com/KiddChang02/Weather-App"><strong>Explore the docs »</strong></a>
     <br />
@@ -94,7 +94,7 @@
 [![Product Name Screen Shot][product-screenshot]](images/emailList.PNG)
 -->
 
-This project is a way to help build my skills by creating a web app simulating a simple calculator.
+This project's purpose was to help test and build my skills by creating a web app simulating a simple calculator with an added fuctionality of switching back and forth between light mode and dark mode.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 

@@ -1,13 +1,6 @@
-// --F-- operation functions
-let add = (a,b) => {return a+b;}
-let subtract = (a,b) => {return a-b;}
-let multiply = (a,b) =>  {return a*b;}
-let divide = (a,b) => {return a/b;}
-
-function operate(operator, num1, num2) {
-    let op = operator(num1,num2);
-
-    return (op);
+// --F-- operation function
+function operate(func) {
+    return new Function('return ' + func)();
 }
 
 // --F-- clear & error functions
@@ -54,6 +47,7 @@ function operatorNextToEachother(s) {
      else {return false;}
 }
 
+// --F-- my assisted functions
 function easySwitch(exp) {
     switch (exp) {
         case "+":  
@@ -69,7 +63,8 @@ function easySwitch(exp) {
             display.textContent = "Math ERROR";
             break;
         default:
-            display.textContent = "result";
+            const result = operate(display.textContent);
+            display.textContent = result;
             clearResult = display.textContent;
             break;
     }
@@ -78,13 +73,14 @@ function easySwitch(exp) {
 // --F-- event listener functions
 function buttonEvents() {
 
-    let calculation = "";
-
+    // --- delete/equal buttons
     // click equal
     document.getElementById("grid=").addEventListener("click", function() {
-                  
+        let calculation = display.textContent;
+
         let calculationArray = calculation.split(/(\D)/);
         let initialArray = calculation.split("");
+        
         const opDup = operatorDuplicate(calculation);
         const opNexToEach = operatorNextToEachother(calculation);
         
@@ -96,14 +92,11 @@ function buttonEvents() {
         } else {
             easySwitch(initialArray[initialArray.length - 1]);
         }
-
-        calculation = "";
     });
 
     // click clear
     document.getElementById("gridc").addEventListener("click", function(){
         display.textContent = "";
-        calculation = "";
     });
 
     // click delete
@@ -119,28 +112,24 @@ function buttonEvents() {
     document.getElementById("grid+").addEventListener("click", function(){
         ifClearResult(clearResult);
         display.textContent += "+";
-        calculation += "+";
     });
 
     // click minus
     document.getElementById("grid-").addEventListener("click", function(){
         ifClearResult(clearResult);
         display.textContent += "-";
-        calculation += "-";
     });
 
     // click multiply
     document.getElementById("grid*").addEventListener("click", function(){
         ifClearResult(clearResult);
         display.textContent += "*";
-        calculation += "*";
     });
 
     // click divide
     document.getElementById("grid/").addEventListener("click", function(){
         ifClearResult(clearResult);
         display.textContent += "/";
-        calculation += "/";
     });
     /*
     document.getElementById("").addEventListener("click", function(){
@@ -149,14 +138,101 @@ function buttonEvents() {
     */
 
     // --- number buttons
-    // click one
+    document.getElementById("gridpi").addEventListener("click", function(){
+        if (clearResult == Math.PI.toString()) {
+            clearResult = "";
+        }
+        ifClearResult(clearResult);
+        display.textContent += Math.PI.toString();
+    });
+
+    document.getElementById("grid.").addEventListener("click", function(){
+        if (clearResult == ".") {
+            clearResult = "";
+        }
+        ifClearResult(clearResult);
+        display.textContent += ".";
+    });
+
+    document.getElementById("grid0").addEventListener("click", function(){
+        if (clearResult == "0") {
+            clearResult = "";
+        }
+        ifClearResult(clearResult);
+        display.textContent += "0";
+    });
+
     document.getElementById("grid1").addEventListener("click", function() {
+        if (clearResult == "1") {
+            clearResult = "";
+        }
         ifClearResult(clearResult);
         display.textContent += "1";
-        calculation += "1";
+    });
+
+    document.getElementById("grid2").addEventListener("click", function() {
+        if (clearResult == "2") {
+            clearResult = "";
+        }
+        ifClearResult(clearResult);
+        display.textContent += "2";
     });
     
+    document.getElementById("grid3").addEventListener("click", function(){
+        if (clearResult == "3") {
+            clearResult = "";
+        }
+        ifClearResult(clearResult);
+        display.textContent += "3";
+    });
     
+    document.getElementById("grid4").addEventListener("click", function(){
+        if (clearResult == "4") {
+            clearResult = "";
+        }
+        ifClearResult(clearResult);
+        display.textContent += "4";
+    });
+
+    document.getElementById("grid5").addEventListener("click", function(){
+        if (clearResult == "5") {
+            clearResult = "";
+        }
+        ifClearResult(clearResult);
+        display.textContent += "5";
+    });
+
+    document.getElementById("grid6").addEventListener("click", function(){
+        if (clearResult == "6") {
+            clearResult = "";
+        }
+        ifClearResult(clearResult);
+        display.textContent += "6";
+    });
+
+    document.getElementById("grid7").addEventListener("click", function(){
+        if (clearResult == "7") {
+            clearResult = "";
+        }
+        ifClearResult(clearResult);
+        display.textContent += "7";
+    });
+
+    document.getElementById("grid8").addEventListener("click", function(){
+        if (clearResult == "8") {
+            clearResult = "";
+        }
+        ifClearResult(clearResult);
+        display.textContent += "8";
+    });
+
+    document.getElementById("grid9").addEventListener("click", function(){
+        if (clearResult == "9") {
+            clearResult = "";
+        }
+        ifClearResult(clearResult);
+        display.textContent += "9";
+    });
 }
 
 // global variables

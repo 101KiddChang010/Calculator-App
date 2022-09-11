@@ -49,16 +49,36 @@ function operatorNextToEachother(s) {
             trueOrFalse = true;
         } 
      });
-     
+
      if (trueOrFalse == true) {return true;}
      else {return false;}
+}
+
+function easySwitch(exp) {
+    switch (exp) {
+        case "+":  
+            display.textContent = "Math ERROR";
+            break;
+        case "-":
+            display.textContent = "Math ERROR";
+            break;
+        case "*":
+            display.textContent = "Math ERROR";
+            break;
+        case "/":
+            display.textContent = "Math ERROR";
+            break;
+        default:
+            display.textContent = "result";
+            clearResult = display.textContent;
+            break;
+    }
 }
 
 // --F-- event listener functions
 function buttonEvents() {
 
     let calculation = "";
-    let clearResult;
 
     // click equal
     document.getElementById("grid=").addEventListener("click", function() {
@@ -67,29 +87,14 @@ function buttonEvents() {
         let initialArray = calculation.split("");
         const opDup = operatorDuplicate(calculation);
         const opNexToEach = operatorNextToEachother(calculation);
-        console.log(opNexToEach);
-
+        
         if (opDup == true || opNexToEach == true) {
             display.textContent = "Math ERROR";
+        } else if (initialArray[0] == "+" || initialArray[0] == "-" 
+                || initialArray[0] == "*" || initialArray[0] == "/") {
+            easySwitch(initialArray[0]);
         } else {
-            switch (initialArray[0] && initialArray[initialArray.length - 1]) {
-                case "+":  
-                    display.textContent = "Math ERROR";
-                    break;
-                case "-":
-                    display.textContent = "Math ERROR";
-                    break;
-                case "*":
-                    display.textContent = "Math ERROR";
-                    break;
-                case "/":
-                    display.textContent = "Math ERROR";
-                    break;
-                default:
-                    display.textContent = "result";
-                    clearResult = display.textContent;
-                    break;
-            }
+            easySwitch(initialArray[initialArray.length - 1]);
         }
 
         calculation = "";
@@ -148,6 +153,7 @@ function buttonEvents() {
 
 // global variables
 let display = document.getElementById("display-text");
+let clearResult;
 
 // calling functions
 buttonEvents();

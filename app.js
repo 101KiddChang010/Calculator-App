@@ -10,7 +10,7 @@ function operate(operator, num1, num2) {
     return (op);
 }
 
-// --F-- my assisted functions
+// --F-- clear & error functions
 function ifClearResult(clearResult) {
     if (display.textContent == clearResult || display.textContent == "Math ERROR") {
         display.textContent = "";
@@ -27,7 +27,7 @@ function operatorDuplicate(string) {
 }
 
 function operatorNextToEachother(s) {
-    
+
 }
 
 // --F-- event listener functions
@@ -36,6 +36,7 @@ function buttonEvents() {
     let calculation = "";
     let clearResult;
 
+    //click equal
     document.getElementById("grid=").addEventListener("click", function() {
                   
         let calculationArray = calculation.split(/(\D)/);
@@ -70,30 +71,35 @@ function buttonEvents() {
         calculation = "";
     });
 
+    //click clear
     document.getElementById("gridc").addEventListener("click", function(){
         display.textContent = "";
         calculation = "";
     });
 
     //  operator buttons
+    //click plus
     document.getElementById("grid+").addEventListener("click", function(){
         ifClearResult(clearResult);
         display.textContent += "+";
         calculation += "+";
     });
 
+    //click minus
     document.getElementById("grid-").addEventListener("click", function(){
         ifClearResult(clearResult);
         display.textContent += "-";
         calculation += "-";
     });
 
+    //click multiply
     document.getElementById("grid*").addEventListener("click", function(){
         ifClearResult(clearResult);
         display.textContent += "*";
         calculation += "*";
     });
 
+    //click divide
     document.getElementById("grid/").addEventListener("click", function(){
         ifClearResult(clearResult);
         display.textContent += "/";
@@ -106,6 +112,7 @@ function buttonEvents() {
     */
 
     //  number buttons
+    //click one
     document.getElementById("grid1").addEventListener("click", function() {
         ifClearResult(clearResult);
         display.textContent += "1";

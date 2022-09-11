@@ -56,8 +56,9 @@ body {
     height: 65%;
 }
 
-.grid {
+.grid > * {
     display: flex;
+    flex: 0 0 auto;
     justify-content: center;
     align-items: center;
     background-color: gainsboro;
@@ -70,6 +71,12 @@ body {
 #gridc {
   background-color: rgba(255, 0, 0, 0.5);
 }
+
+/*
+#grid\= {
+
+}
+*/
 
 /* The switch - the box around the slider */
 .switch {

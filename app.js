@@ -26,8 +26,32 @@ function operatorDuplicate(string) {
     } else {return true;}
 }
 
+// !!! code could be optimized better; but works
 function operatorNextToEachother(s) {
+    let trueOrFalse;
+    let combination = {
+        combination1: /[+][-]/,
+        combination2: /[+][*]/,
+        combination3: /[+][/]/,
+        combination4: /[-][+]/,
+        combination5: /[-][*]/,
+        combination6: /[-][/]/,
+        combination7: /[*][+]/,
+        combination8: /[*][-]/,
+        combination9: /[*][/]/,
+        combination10: /[/][+]/,
+        combination11: /[/][-]/,
+        combination12: /[/][*]/,
+    }
 
+    Object.keys(combination).forEach(function(key) {
+        if (combination[key].test(s) == true) {
+            trueOrFalse = true;
+        } 
+     });
+     
+     if (trueOrFalse == true) {return true;}
+     else {return false;}
 }
 
 // --F-- event listener functions
@@ -36,14 +60,14 @@ function buttonEvents() {
     let calculation = "";
     let clearResult;
 
-    //click equal
+    // click equal
     document.getElementById("grid=").addEventListener("click", function() {
                   
         let calculationArray = calculation.split(/(\D)/);
         let initialArray = calculation.split("");
         const opDup = operatorDuplicate(calculation);
         const opNexToEach = operatorNextToEachother(calculation);
-        console.log();
+        console.log(opNexToEach);
 
         if (opDup == true || opNexToEach == true) {
             display.textContent = "Math ERROR";
@@ -71,35 +95,35 @@ function buttonEvents() {
         calculation = "";
     });
 
-    //click clear
+    // click clear
     document.getElementById("gridc").addEventListener("click", function(){
         display.textContent = "";
         calculation = "";
     });
 
-    //  operator buttons
-    //click plus
+    // --- operator buttons
+    // click plus
     document.getElementById("grid+").addEventListener("click", function(){
         ifClearResult(clearResult);
         display.textContent += "+";
         calculation += "+";
     });
 
-    //click minus
+    // click minus
     document.getElementById("grid-").addEventListener("click", function(){
         ifClearResult(clearResult);
         display.textContent += "-";
         calculation += "-";
     });
 
-    //click multiply
+    // click multiply
     document.getElementById("grid*").addEventListener("click", function(){
         ifClearResult(clearResult);
         display.textContent += "*";
         calculation += "*";
     });
 
-    //click divide
+    // click divide
     document.getElementById("grid/").addEventListener("click", function(){
         ifClearResult(clearResult);
         display.textContent += "/";
@@ -111,8 +135,8 @@ function buttonEvents() {
     });
     */
 
-    //  number buttons
-    //click one
+    // --- number buttons
+    // click one
     document.getElementById("grid1").addEventListener("click", function() {
         ifClearResult(clearResult);
         display.textContent += "1";
@@ -122,8 +146,8 @@ function buttonEvents() {
     
 }
 
-//  global variables
+// global variables
 let display = document.getElementById("display-text");
 
-//  calling functions
+// calling functions
 buttonEvents();

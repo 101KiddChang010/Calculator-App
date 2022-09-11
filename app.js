@@ -106,6 +106,14 @@ function buttonEvents() {
         calculation = "";
     });
 
+    // click delete
+    document.getElementById("griddel").addEventListener("click", function(){
+        let displayInArray = display.textContent.split("");
+        displayInArray = displayInArray.slice(0,-1);
+        const newDisplay = displayInArray.join('')
+        display.textContent = newDisplay;
+    });
+
     // --- operator buttons
     // click plus
     document.getElementById("grid+").addEventListener("click", function(){

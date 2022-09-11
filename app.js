@@ -10,6 +10,7 @@ function ifClearResult(clearResult) {
     }
 }
 
+// checks for operators that are next to eachother
 function operatorDuplicate(string) {
     const pattern = /([+,-,*,/])\1+/g;
     trueOrFalse = string.match(pattern);
@@ -77,8 +78,6 @@ function buttonEvents() {
     // click equal
     document.getElementById("grid=").addEventListener("click", function() {
         let calculation = display.textContent;
-
-        let calculationArray = calculation.split(/(\D)/);
         let initialArray = calculation.split("");
         
         const opDup = operatorDuplicate(calculation);

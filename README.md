@@ -31,7 +31,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/KiddChang02/Weather-App">
+  <a href="https://github.com/101KiddChang010/Calculator-App">
     <!--
     <img src="images/logo.png" alt="Logo" width="80" height="80">
     -->
@@ -42,16 +42,14 @@
   <p align="center">
     This web app simulates a simple operational calculator that can switch between light mode and dark mode.
     <br />
-    <a href="https://github.com/KiddChang02/Weather-App"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/101KiddChang010/Calculator-App"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <!--
-    <a href="https://github.com/KiddChang02/repo_name">View Demo</a>
+    <a href="https://101kiddchang010.github.io/Calculator-App/">View Demo</a>
     ·
-    -->
-    <a href="https://github.com/KiddChang02/Weather-App/issues">Report Bug</a>
+    <a href="https://github.com/101KiddChang010/Calculator-App/issues">Report Bug</a>
     ·
-    <a href="https://github.com/KiddChang02/Weather-App/issues">Request Feature</a>
+    <a href="https://github.com/101KiddChang010/Calculator-Apppull">Request Feature</a>
   </p>
 </div>
 

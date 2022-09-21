@@ -49,7 +49,7 @@
     ·
     <a href="https://github.com/101KiddChang010/Calculator-App/issues">Report Bug</a>
     ·
-    <a href="https://github.com/101KiddChang010/Calculator-Apppull">Request Feature</a>
+    <a href="https://github.com/101KiddChang010/Calculator-App/pulls">Request Feature</a>
   </p>
 </div>
 
